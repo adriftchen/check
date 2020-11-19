@@ -1,33 +1,18 @@
 <?php
-//get可傳陣列
-//post可傳陣列但麻煩
-//cookie session 均可傳陣列，把資料存在載體上，不須帶在網址後面->較安全
-session_start(); /* php內有用到SESSION函式要先start */
+session_start();
 
-$_SESSION['err']=[];/* 每次傳值都要清空 不然暫存檔會記住*/
+$_SESSION['err']=[];
 
 $acc=$_POST['acc'];
 
 accept('acc');
-/* if(empty($acc)){
-    $_SESSION['err']['acc']['empty']=true;
-} */
 length('acc',4,10);
-/* if(strlen($acc)>10 || strlen($acc) < 4){
-    $_SESSION['err']['acc']['len']=true;
-} */
 
 
 $pw=$_POST['pw'];
 accept('pw');
-/* if(empty($pw)){
-    $_SESSION['err']['pw']['empty']=true;
-}
- */
 length('pw',8,16);
-/* if(strlen($pw)>16 || strlen($pw) < 8){
-    $_SESSION['err']['pw']['len']=true;
-} */
+
 
 $name=$_POST['name'];
 $birthday=$_POST['birthday'];
